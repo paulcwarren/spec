@@ -5147,7 +5147,7 @@ var _Identity_serviceDesc = grpc.ServiceDesc{
 }
 
 // Client API for Controller service
-
+//go:generate counterfeiter -o csishim/csi_fake/fake_controllerclient.go . ControllerClient
 type ControllerClient interface {
 	CreateVolume(ctx context.Context, in *CreateVolumeRequest, opts ...grpc.CallOption) (*CreateVolumeResponse, error)
 	DeleteVolume(ctx context.Context, in *DeleteVolumeRequest, opts ...grpc.CallOption) (*DeleteVolumeResponse, error)
