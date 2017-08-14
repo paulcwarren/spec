@@ -8,10 +8,10 @@ import (
 
 type CsiShim struct{}
 
-func (csi *CsiShim) NewNodeClient(conn *grpc.ClientConn) spec.NodeClient {
+func (c *CsiShim) NewNodeClient(conn *grpc.ClientConn) csi.NodeClient {
 	return csi.NewNodeClient(conn)
 }
 
-func (csi *CsiShim) NewControllerClient(conn *grpc.ClientConn) spec.ControllerClient {
+func (c *CsiShim) NewControllerClient(conn *grpc.ClientConn) spec.ControllerClient {
 	return csi.NewControllerClient(conn)
 }
